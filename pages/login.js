@@ -8,7 +8,8 @@ export class LoginPage {
   loginBtn = () => this.page.locator(".btn-primary");
   usernameInput = () => this.page.locator("#Username");
   passwordInput = () => this.page.locator("#Password");
-  cancelBtn = () => this.page.locator(".btn-secondary")
+  cancelBtn = () => this.page.locator(".btn-secondary");
+  regressionLink = () => this.page.locator('a[href*="QA Regression"]');
 
   //Login
   async goto() {
@@ -43,6 +44,11 @@ export class LoginPage {
     await expect(this.loginErrorMsg()).toHaveText(
       "Invalid username or password"
     );
+  }
+
+  //Regression link
+  async validateRegressionLink() {
+    await this.regressionLink().click();
   }
 
 }

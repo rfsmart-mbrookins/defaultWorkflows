@@ -1,26 +1,43 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../pages/login";
-import { AcctAlias02 } from "../pages/acctAlias02";
+import { AcctAlias02 } from "../pages/acctAlias02"; // Ensure correct import
 
-/* Go to login page using beforeEach hook */
+
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);
   await test.step("Go to Login Page", async () => {
     await loginPage.goto();
-    // await loginPage.validateLoginPageURL();
   });
 });
 
 test.describe("Default Workflow Tests", () => {
-  /* Login Validation test - Successful Login Test */
+
+  /* Login Validation Test - Successful Login */
   test("Validate Successful Login", async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await test.step("Input Valid Credentials and Submit", async () => {
       await loginPage.inputValidLoginCredentials();
       await loginPage.submitLoginCredentials();
-    });
-    test("Validate Account Alias Issue 02", async ({ page }) => {
-      const acctAlias02 = new AcctAlias02(page);
+    })
   });
+
+  /* Test to Open Regression Link */
+  test("Open Regression Link", async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    const acctAlias02Page = new AcctAlias02(page);
+
+    // Log in to the application
+    await test.step("Input Valid Credentials and Submit", async () => {
+      await loginPage.inputValidLoginCredentials();
+      await loginPage.submitLoginCredentials();
+    });
+
+    // Click on the Regression Link
+    await test.step("Click Regression Link", async () => {
+      await loginPage.validateRegressionLink(); 
+    });
+
+  })
+
 });
