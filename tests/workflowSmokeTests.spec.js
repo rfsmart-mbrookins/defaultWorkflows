@@ -42,6 +42,35 @@ test.describe("Default Workflow Tests", () => {
     await test.step("Click Account Alias 02 Link", async () => {
       await acctAlias02Page.validateAcctAlias02Link(); 
     });
+    //Enter Organization Code
+    await test.step("Enter Org Code", async () => {
+      await acctAlias02Page.collectOrg(); 
+    });
+    await test.step("Enter Account Source", async () => {
+      await acctAlias02Page.collectAccountSource();
+    });
+    await test.step("Enter Item Number", async () => {
+      await acctAlias02Page.collectItemNumber();
+    });
+    await test.step("Enter Subinventory", async () => {
+      await acctAlias02Page.collectSubinventory();
+    });
+    await test.step("Enter Locator", async () => {
+      await acctAlias02Page.collectLocator();
+    });
+    await test.step("Enter Quantity", async () => {
+      await acctAlias02Page.collectQuantity();
+    });
+    await test.step("Enter UOM", async () => {
+      await acctAlias02Page.collectUom();
+    });
+    await test.step("Enter Quantity of Labels", async () => {
+      await acctAlias02Page.collectQtyLabels();
+    });
+    await test.step("Exit Workflow", async () => {
+      await acctAlias02Page.exitWorkflow();
+    });
+
   
 
   });
