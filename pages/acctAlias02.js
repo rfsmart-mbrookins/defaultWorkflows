@@ -8,6 +8,9 @@ export class AcctAlias02 {
  
   accountAliasIssue02Link = () => this.page.locator('a[id="AccountAliasIssue02_Default"]');
 
-  
+    //Account Alias 02 link
+    async validateAcctAlias02Link() {
+      await this.accountAliasIssue02Link().click();
+    }
 
 }

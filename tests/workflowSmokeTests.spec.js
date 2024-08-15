@@ -23,7 +23,7 @@ test.describe("Default Workflow Tests", () => {
   });
 
   /* Test to Open Regression Link */
-  test("Open Regression Link", async ({ page }) => {
+  test("Default Workflow Smoketest", async ({ page }) => {
     const loginPage = new LoginPage(page);
     const acctAlias02Page = new AcctAlias02(page);
 
@@ -37,7 +37,13 @@ test.describe("Default Workflow Tests", () => {
     await test.step("Click Regression Link", async () => {
       await loginPage.validateRegressionLink(); 
     });
+  
+    // Click on the Account Alias Issue 02 Link
+    await test.step("Click Account Alias 02 Link", async () => {
+      await acctAlias02Page.validateAcctAlias02Link(); 
+    });
+  
 
-  })
+  });
 
 });
