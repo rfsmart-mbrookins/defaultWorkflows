@@ -3,6 +3,7 @@ import { LoginPage } from "../pages/login";
 import { AcctAlias02 } from "../pages/acctAlias02";
 import { LabelPrint01 } from "../pages/labelPrint01";
 import { MovementRequest } from "../pages/movementRequest";
+import { ViewItemQuantities } from "../pages/viewItemQuantities";
 
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);
@@ -115,7 +116,7 @@ test.describe("Default Workflow Tests", () => {
   /* Create Movement Request */
   test("Create Movement Request", async ({ page }) => {
     const movementRequestPage = new MovementRequest(page);
-    // Click on the Label Print 01 Link
+    // Click on the Movement Request Link
     await test.step("Click Create Movement Request Link", async () => {
       await movementRequestPage.validateCreateMovementRequestLink();
     });
@@ -164,4 +165,45 @@ test.describe("Default Workflow Tests", () => {
       await movementRequestPage.exitWorkflow();
     });
   });
-}); //test descibe close
+
+  /* View Item Quantities */
+  test("View Item Quantities", async ({ page }) => {
+    const viewItemQuantitiesPage = new ViewItemQuantities(page);
+    // Click on the View Item Quantities Link
+    await test.step("Click View Item Quantities Link", async () => {
+      await viewItemQuantitiesPage.validateViewItemQuantitiesLink();
+    });
+    //Enter Organization Code
+    await test.step("Enter Org Code", async () => {
+      await viewItemQuantitiesPage.collectOrg();
+    });
+    //Enter Item Number
+    await test.step("Enter Item Number", async () => {
+      await viewItemQuantitiesPage.collectItemNumber();
+    });
+    //Enter Subinventory
+    await test.step("Enter Subinventory", async () => {
+      await viewItemQuantitiesPage.collectSubinventory();
+    });
+    //Enter Locator
+    await test.step("Enter Locator", async () => {
+      await viewItemQuantitiesPage.collectLocator();
+    });
+    //Advance in Workflow
+    await test.step("Click Enter", async () => {
+      await viewItemQuantitiesPage.enterScreen();
+    });
+    //Enter Quantity of Labels
+    await test.step("Enter Quantity of Labels", async () => {
+      await viewItemQuantitiesPage.collectQtyLabels();
+    });
+    //Enter Quantity on Labels
+    await test.step("Enter Quantity on Labels", async () => {
+      await viewItemQuantitiesPage.collectQtyOnLabels();
+    });
+    //Exit Workflow
+    await test.step("Exit Workflow", async () => {
+      await viewItemQuantitiesPage.exitWorkflow();
+    });
+  });
+});
