@@ -4,7 +4,6 @@ import { AcctAlias02 } from "../pages/acctAlias02";
 import { LabelPrint01 } from "../pages/labelPrint01";
 import { MovementRequest } from "../pages/movementRequest";
 
-
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);
   //Go to Login Page
@@ -23,7 +22,6 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Default Workflow Tests", () => {
-
   /* Account Alias Issue 02 */
   test("Account Alias Issue 02", async ({ page }) => {
     const acctAlias02Page = new AcctAlias02(page);
@@ -114,58 +112,56 @@ test.describe("Default Workflow Tests", () => {
     });
   });
 
-/* Create Movement Request */
-test("Create Movement Request", async ({ page }) => {
-  const movementRequestPage = new MovementRequest(page);
-  // Click on the Label Print 01 Link
-  await test.step("Click Create Movement Request Link", async () => {
-    await movementRequestPage.validateCreateMovementRequestLink();
-  });
-  //Enter Organization Code
-  await test.step("Enter Org Code", async () => {
-    await movementRequestPage.collectOrg();
-  });
+  /* Create Movement Request */
+  test("Create Movement Request", async ({ page }) => {
+    const movementRequestPage = new MovementRequest(page);
+    // Click on the Label Print 01 Link
+    await test.step("Click Create Movement Request Link", async () => {
+      await movementRequestPage.validateCreateMovementRequestLink();
+    });
+    //Enter Organization Code
+    await test.step("Enter Org Code", async () => {
+      await movementRequestPage.collectOrg();
+    });
     //Enter Item Number
     await test.step("Enter Item Number", async () => {
       await movementRequestPage.collectItemNumber();
     });
-  //Enter Source Subinventory
-  await test.step("Enter Source Subinventory", async () => {
-    await movementRequestPage.collectSourceSubinventory();
+    //Enter Source Subinventory
+    await test.step("Enter Source Subinventory", async () => {
+      await movementRequestPage.collectSourceSubinventory();
+    });
+    //Enter Source Locator
+    await test.step("Enter Source Locator", async () => {
+      await movementRequestPage.collectSourceLocator();
+    });
+    //Enter Quantity
+    await test.step("Enter Quantity", async () => {
+      await movementRequestPage.collectQuantity();
+    });
+    //Enter Unit of Measure
+    await test.step("Enter Unit of Measure", async () => {
+      await movementRequestPage.collectUom();
+    });
+    //Enter Destination Subinventory
+    await test.step("Enter Destination Subinventory", async () => {
+      await movementRequestPage.collectDestinationSubinventory();
+    });
+    //Enter Destination Locator
+    await test.step("Enter Destination Locator", async () => {
+      await movementRequestPage.collectDestinationLocator();
+    });
+    //Enter Delivery Request Date
+    await test.step("Enter Delivery Request Date", async () => {
+      await movementRequestPage.collectDeliveryDate();
+    });
+    //Submit Movement Request
+    await test.step("Submit Movement Request", async () => {
+      await movementRequestPage.submitMovementRequest();
+    });
+    //Exit Workflow
+    await test.step("Exit Workflow", async () => {
+      await movementRequestPage.exitWorkflow();
+    });
   });
-  //Enter Source Locator
-  await test.step("Enter Source Locator", async () => {
-    await movementRequestPage.collectSourceLocator();
-  });
-  //Enter Quantity
-  await test.step("Enter Quantity", async () => {
-    await movementRequestPage.collectQuantity();
-  });
-  //Enter Unit of Measure
-  await test.step("Enter Unit of Measure", async () => {
-    await movementRequestPage.collectUom();
-  });
-  //Enter Destination Subinventory
-  await test.step("Enter Destination Subinventory", async () => {
-    await movementRequestPage.collectDestinationSubinventory();
-  });
-  //Enter Destination Locator
-  await test.step("Enter Destination Locator", async () => {
-    await movementRequestPage.collectDestinationLocator();
-  });
-  //Enter Delivery Request Date
-  await test.step("Enter Delivery Request Date", async () => {
-    await movementRequestPage.collectDeliveryDate();
-  });
- //Submit Movement Request
- await test.step("Submit Movement Request", async () => {
-  await movementRequestPage.submitMovementRequest();
-});
-  //Exit Workflow
-  await test.step("Exit Workflow", async () => {
-    await movementRequestPage.exitWorkflow();
-  });
-});
-
-
 }); //test descibe close
