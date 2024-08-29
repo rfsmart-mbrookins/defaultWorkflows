@@ -4,19 +4,22 @@ export class LoginPage {
   constructor(page) {
     this.page = page;
   }
-  
+
   loginBtn = () => this.page.locator(".btn-primary");
   usernameInput = () => this.page.locator("#Username");
   passwordInput = () => this.page.locator("#Password");
   cancelBtn = () => this.page.locator(".btn-secondary");
   regressionLink = () => this.page.locator('a[href*="QA Regression"]');
+  exitBtn = () => this.page.locator("#btnF3");
 
   //Login
   async goto() {
-    await this.page.goto("https://icsstg-purplecobras.oraclecloud.rfsmart.com/webclient");
+    await this.page.goto(
+      "https://icsstg-purplecobras.oraclecloud.rfsmart.com/webclient"
+    );
   }
 
-//Enter valid login credentials
+  //Enter valid login credentials
   async inputValidLoginCredentials() {
     await this.usernameInput().fill("dev.one");
     await this.passwordInput().fill("RFSics1650");
@@ -51,6 +54,8 @@ export class LoginPage {
     await this.regressionLink().click();
   }
 
+  //Exit Workflow
+  async exitWorkflow() {
+    await this.exitBtn().click();
+  }
 }
-
-

@@ -5,7 +5,8 @@ export class AcctAlias02 {
     this.page = page;
   }
 
-  accountAliasIssue02Link = () => this.page.locator('a:has-text("Account Alias Issue 02")');
+  accountAliasIssue02Link = () =>
+    this.page.locator('a:has-text("Account Alias Issue 02")');
   textBox = () => this.page.locator("#txt");
   exitBtn = () => this.page.locator("#btnF3");
 

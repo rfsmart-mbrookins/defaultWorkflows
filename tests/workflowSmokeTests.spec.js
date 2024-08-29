@@ -23,6 +23,14 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+// test.afterAll(async ({ page }) => {
+//   const loginPage = new LoginPage(page);
+//     //Exit Workflow
+//     await test.step("Exit Workflow", async () => {
+//       await loginPage.exitWorkflow();
+//     });
+// });
+
 test.describe("Default Workflow Tests", () => {
   /* Account Alias Issue 02 */
   test("Account Alias Issue 02", async ({ page }) => {

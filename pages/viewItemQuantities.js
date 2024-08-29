@@ -45,28 +45,26 @@ export class ViewItemQuantities {
     await this.textBox().press("Enter");
   }
 
-   //Collect Quantity of Labels
-   async collectQtyLabels() {
+  //Collect Quantity of Labels
+  async collectQtyLabels() {
     await this.textBox().fill("1");
     await this.textBox().press("Enter");
   }
 
-     //Collect Quantity on Labels
-     async collectQtyOnLabels() {
-        await this.textBox().fill("1");
-        await this.textBox().press("Enter");
-      }
+  //Collect Quantity on Labels
+  async collectQtyOnLabels() {
+    await this.textBox().fill("1");
+    await this.textBox().press("Enter");
+  }
 
   //Collect Printer -
   async collectPrinter() {
     await this.textBox().fill("\\PRINT-SERVLexmark-room");
     await this.textBox().press("Enter");
   }
-  
 
   //Exit Workflow
   async exitWorkflow() {
     await this.exitBtn().click();
   }
-
 }
