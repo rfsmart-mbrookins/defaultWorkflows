@@ -5,6 +5,7 @@ import { LabelPrint01 } from "../pages/labelPrint01";
 import { MovementRequest } from "../pages/movementRequest";
 import { ViewItemQuantities } from "../pages/viewItemQuantities";
 import { InspectReceipt02 } from "../pages/inspectReceipt02";
+import { MiscellaneousTransactions } from "../pages/miscellaneousTransactions";
 
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);
@@ -252,4 +253,55 @@ test.describe("Default Workflow Tests", () => {
       await inspectReceipt02Page.exitWorkflow();
     });
   });
+
+    /* Miscellaneous Transactons */
+    test("Miscellaneous Transactons", async ({ page }) => {
+      const miscellaneousTransactionsPage = new MiscellaneousTransactions(page);
+      // Click on the Inspect Receipt 02 Link
+      await test.step("Click Miscellaneous Transactions Link", async () => {
+        await miscellaneousTransactionsPage.validateMiscellaneousTransactions();
+      });
+      //Enter Organization Code
+      await test.step("Enter Org Code", async () => {
+        await miscellaneousTransactionsPage.collectOrg();
+      });
+        //Enter Account Source
+    await test.step("Enter Account Source", async () => {
+      await miscellaneousTransactionsPage.collectAccountSource();
+    });
+    //Enter Item Number
+    await test.step("Enter Item Number", async () => {
+      await miscellaneousTransactionsPage.collectItemNumber();
+    });
+    //Enter Subinventory
+    await test.step("Enter Subinventory", async () => {
+      await miscellaneousTransactionsPage.collectSubinventory();
+    });
+    //Enter Locator
+    await test.step("Enter Locator", async () => {
+      await miscellaneousTransactionsPage.collectLocator();
+    });
+    //Enter Quantity
+    await test.step("Enter Quantity", async () => {
+      await miscellaneousTransactionsPage.collectQuantity();
+    });
+    //Enter Unit of Measure
+    await test.step("Enter UOM", async () => {
+      await miscellaneousTransactionsPage.collectUom();
+    });
+    //Enter Quantity of Labels
+    await test.step("Enter Quantity of Labels", async () => {
+      await miscellaneousTransactionsPage.collectQtyLabels();
+    });
+    //Enter Printer
+    await test.step("Enter Printer", async () => {
+      await miscellaneousTransactionsPage.collectPrinter();
+    });
+    //Exit Workflow
+    await test.step("Exit Workflow", async () => {
+      await miscellaneousTransactionsPage.exitWorkflow();
+    });
+
+    });
+        
 });
