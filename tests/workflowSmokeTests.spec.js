@@ -247,6 +247,7 @@ test.describe("Default Workflow Tests", () => {
     await test.step("Enter Accepted Quality Code", async () => {
       await inspectReceipt02Page.collectAcceptedCode();
     });
+    //Exit Workflow
     await test.step("Exit Workflow", async () => {
       await inspectReceipt02Page.exitWorkflow();
     });
