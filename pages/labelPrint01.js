@@ -5,9 +5,9 @@ export class LabelPrint01 {
     this.page = page;
   }
 
-  LabelPrint01Link = () => this.page.locator('a[id="LabelPrint01_Default"]');
+  LabelPrint01Link = () => this.page.locator('a:has-text("Label Print 01")');
   textBox = () => this.page.locator('#txt');
-  exitBtn = () => this.page.locator('#btnF3')
+  exitBtn = () => this.page.locator('#btnF3');
 
     //Label Print 01 link
     async validateLabelPrint01Link() {
