@@ -4,6 +4,7 @@ import { AcctAlias02 } from "../pages/acctAlias02";
 import { LabelPrint01 } from "../pages/labelPrint01";
 import { MovementRequest } from "../pages/movementRequest";
 import { ViewItemQuantities } from "../pages/viewItemQuantities";
+import { InspectReceipt02 } from "../pages/inspectReceipt02";
 
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);
@@ -204,6 +205,42 @@ test.describe("Default Workflow Tests", () => {
     //Exit Workflow
     await test.step("Exit Workflow", async () => {
       await viewItemQuantitiesPage.exitWorkflow();
+    });
+  });
+
+  /* Inspect Receipt 02 */
+  test("Inspect Receipt 02", async ({ page }) => {
+    const inspectReceipt02Page = new InspectReceipt02(page);
+    // Click on the Inspect Receipt 02 Link
+    await test.step("Click View Item Quantities Link", async () => {
+      await inspectReceipt02Page.validateInspectReceipt02();
+    });
+    //Enter Organization Code
+    await test.step("Enter Org Code", async () => {
+      await inspectReceipt02Page.collectOrg();
+    });
+    //Enter Receipt Number
+    await test.step("Enter Receipt Number", async () => {
+      await inspectReceipt02Page.collectReceipt();
+    });
+    //Enter Item Number
+    await test.step("Enter Item Number", async () => {
+      await inspectReceipt02Page.collectItemNumber();
+    });
+    //Enter Unit of Measure
+    await test.step("Enter Unit of Measure", async () => {
+      await inspectReceipt02Page.collectUom();
+    });
+    //Enter Accepted Quantity
+    await test.step("Enter Accepted Quantity", async () => {
+      await inspectReceipt02Page.collectAcceptedQty();
+    });
+    //Enter Accepted Quality Code
+    await test.step("Enter Accepted Quality Code", async () => {
+      await inspectReceipt02Page.collectAcceptedCode();
+    });
+    await test.step("Exit Workflow", async () => {
+      await inspectReceipt02Page.exitWorkflow();
     });
   });
 });
