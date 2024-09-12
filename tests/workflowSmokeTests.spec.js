@@ -254,18 +254,18 @@ test.describe("Default Workflow Tests", () => {
   //   });
   // });
 
-    /* Miscellaneous Transactons */
-    test("Miscellaneous Transactons", async ({ page }) => {
-      const miscellaneousTransactionsPage = new MiscellaneousTransactions(page);
-      // Click on the Inspect Receipt 02 Link
-      await test.step("Click Miscellaneous Transactions Link", async () => {
-        await miscellaneousTransactionsPage.validateMiscellaneousTransactions();
-      });
-      //Enter Organization Code
-      await test.step("Enter Org Code", async () => {
-        await miscellaneousTransactionsPage.collectOrg();
-      });
-        //Enter Account Source
+  /* Miscellaneous Transactons */
+  test("Miscellaneous Transactons", async ({ page }) => {
+    const miscellaneousTransactionsPage = new MiscellaneousTransactions(page);
+    // Click on the Inspect Receipt 02 Link
+    await test.step("Click Miscellaneous Transactions Link", async () => {
+      await miscellaneousTransactionsPage.validateMiscellaneousTransactions();
+    });
+    //Enter Organization Code
+    await test.step("Enter Org Code", async () => {
+      await miscellaneousTransactionsPage.collectOrg();
+    });
+    //Enter Account Source
     await test.step("Enter Account Source", async () => {
       await miscellaneousTransactionsPage.collectAccountSource();
     });
@@ -301,7 +301,7 @@ test.describe("Default Workflow Tests", () => {
     await test.step("Exit Workflow", async () => {
       await miscellaneousTransactionsPage.exitWorkflow();
     });
+  });
 
-    });
-        
+  
 });
