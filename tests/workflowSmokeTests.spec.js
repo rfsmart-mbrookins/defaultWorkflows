@@ -33,54 +33,54 @@ test.beforeEach(async ({ page }) => {
 // });
 
 test.describe("Default Workflow Tests", () => {
-  /* Account Alias Issue 02 */
-  test("Account Alias Issue 02", async ({ page }) => {
-    const acctAlias02Page = new AcctAlias02(page);
-    //Click on Account Alias Issue 02 Link
-    await test.step("Click Account Alias 02 Link", async () => {
-      await acctAlias02Page.validateAcctAlias02Link();
-    });
-    //Enter Organization Code
-    await test.step("Enter Org Code", async () => {
-      await acctAlias02Page.collectOrg();
-    });
-    //Enter Account Source
-    await test.step("Enter Account Source", async () => {
-      await acctAlias02Page.collectAccountSource();
-    });
-    //Enter Item Number
-    await test.step("Enter Item Number", async () => {
-      await acctAlias02Page.collectItemNumber();
-    });
-    //Enter Subinventory
-    await test.step("Enter Subinventory", async () => {
-      await acctAlias02Page.collectSubinventory();
-    });
-    //Enter Locator
-    await test.step("Enter Locator", async () => {
-      await acctAlias02Page.collectLocator();
-    });
-    //Enter Quantity
-    await test.step("Enter Quantity", async () => {
-      await acctAlias02Page.collectQuantity();
-    });
-    //Enter Unit of Measure
-    await test.step("Enter UOM", async () => {
-      await acctAlias02Page.collectUom();
-    });
-    //Enter Quantity of Labels
-    await test.step("Enter Quantity of Labels", async () => {
-      await acctAlias02Page.collectQtyLabels();
-    });
-    //Enter Printer
-    await test.step("Enter Printer", async () => {
-      await acctAlias02Page.collectPrinter();
-    });
-    //Exit Workflow
-    await test.step("Exit Workflow", async () => {
-      await acctAlias02Page.exitWorkflow();
-    });
-  });
+  /* Account Alias Issue 02 */ /*Deprecated*/
+  // test("Account Alias Issue 02", async ({ page }) => {
+  //   const acctAlias02Page = new AcctAlias02(page);
+  //   //Click on Account Alias Issue 02 Link
+  //   await test.step("Click Account Alias 02 Link", async () => {
+  //     await acctAlias02Page.validateAcctAlias02Link();
+  //   });
+  //   //Enter Organization Code
+  //   await test.step("Enter Org Code", async () => {
+  //     await acctAlias02Page.collectOrg();
+  //   });
+  //   //Enter Account Source
+  //   await test.step("Enter Account Source", async () => {
+  //     await acctAlias02Page.collectAccountSource();
+  //   });
+  //   //Enter Item Number
+  //   await test.step("Enter Item Number", async () => {
+  //     await acctAlias02Page.collectItemNumber();
+  //   });
+  //   //Enter Subinventory
+  //   await test.step("Enter Subinventory", async () => {
+  //     await acctAlias02Page.collectSubinventory();
+  //   });
+  //   //Enter Locator
+  //   await test.step("Enter Locator", async () => {
+  //     await acctAlias02Page.collectLocator();
+  //   });
+  //   //Enter Quantity
+  //   await test.step("Enter Quantity", async () => {
+  //     await acctAlias02Page.collectQuantity();
+  //   });
+  //   //Enter Unit of Measure
+  //   await test.step("Enter UOM", async () => {
+  //     await acctAlias02Page.collectUom();
+  //   });
+  //   //Enter Quantity of Labels
+  //   await test.step("Enter Quantity of Labels", async () => {
+  //     await acctAlias02Page.collectQtyLabels();
+  //   });
+  //   //Enter Printer
+  //   await test.step("Enter Printer", async () => {
+  //     await acctAlias02Page.collectPrinter();
+  //   });
+  //   //Exit Workflow
+  //   await test.step("Exit Workflow", async () => {
+  //     await acctAlias02Page.exitWorkflow();
+  //   });
+  // });
 
   /* Label Print 01 */
   test("Label Print 01", async ({ page }) => {
@@ -217,42 +217,42 @@ test.describe("Default Workflow Tests", () => {
     });
   });
 
-  /* Inspect Receipt 02 */
-  test("Inspect Receipt 02", async ({ page }) => {
-    const inspectReceipt02Page = new InspectReceipt02(page);
-    // Click on the Inspect Receipt 02 Link
-    await test.step("Click View Item Quantities Link", async () => {
-      await inspectReceipt02Page.validateInspectReceipt02();
-    });
-    //Enter Organization Code
-    await test.step("Enter Org Code", async () => {
-      await inspectReceipt02Page.collectOrg();
-    });
-    //Enter Receipt Number
-    await test.step("Enter Receipt Number", async () => {
-      await inspectReceipt02Page.collectReceipt();
-    });
-    //Enter Item Number
-    await test.step("Enter Item Number", async () => {
-      await inspectReceipt02Page.collectItemNumber();
-    });
-    //Enter Unit of Measure
-    await test.step("Enter Unit of Measure", async () => {
-      await inspectReceipt02Page.collectUom();
-    });
-    //Enter Accepted Quantity
-    await test.step("Enter Accepted Quantity", async () => {
-      await inspectReceipt02Page.collectAcceptedQty();
-    });
-    //Enter Accepted Quality Code
-    await test.step("Enter Accepted Quality Code", async () => {
-      await inspectReceipt02Page.collectAcceptedCode();
-    });
-    //Exit Workflow
-    await test.step("Exit Workflow", async () => {
-      await inspectReceipt02Page.exitWorkflow();
-    });
-  });
+  /* Inspect Receipt 02 */ /*DEPRECATED*/
+  // test("Inspect Receipt 02", async ({ page }) => {
+  //   const inspectReceipt02Page = new InspectReceipt02(page);
+  //   // Click on the Inspect Receipt 02 Link
+  //   await test.step("Click View Item Quantities Link", async () => {
+  //     await inspectReceipt02Page.validateInspectReceipt02();
+  //   });
+  //   //Enter Organization Code
+  //   await test.step("Enter Org Code", async () => {
+  //     await inspectReceipt02Page.collectOrg();
+  //   });
+  //   //Enter Receipt Number
+  //   await test.step("Enter Receipt Number", async () => {
+  //     await inspectReceipt02Page.collectReceipt();
+  //   });
+  //   //Enter Item Number
+  //   await test.step("Enter Item Number", async () => {
+  //     await inspectReceipt02Page.collectItemNumber();
+  //   });
+  //   //Enter Unit of Measure
+  //   await test.step("Enter Unit of Measure", async () => {
+  //     await inspectReceipt02Page.collectUom();
+  //   });
+  //   //Enter Accepted Quantity
+  //   await test.step("Enter Accepted Quantity", async () => {
+  //     await inspectReceipt02Page.collectAcceptedQty();
+  //   });
+  //   //Enter Accepted Quality Code
+  //   await test.step("Enter Accepted Quality Code", async () => {
+  //     await inspectReceipt02Page.collectAcceptedCode();
+  //   });
+  //   //Exit Workflow
+  //   await test.step("Exit Workflow", async () => {
+  //     await inspectReceipt02Page.exitWorkflow();
+  //   });
+  // });
 
     /* Miscellaneous Transactons */
     test("Miscellaneous Transactons", async ({ page }) => {

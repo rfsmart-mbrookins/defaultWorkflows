@@ -17,7 +17,7 @@ export class MiscellaneousTransactions {
 
   //Collect Org
   async collectOrg() {
-    await this.textBox().fill("002");
+    await this.textBox().fill("001");
     await this.textBox().press("Enter");
   }
 
@@ -29,7 +29,7 @@ export class MiscellaneousTransactions {
 
     //Collect Item Number
   async collectItemNumber() {
-    await this.textBox().fill("CD=REG-Item-01");
+    await this.textBox().fill("CD-REG-ITEM-01");
     await this.textBox().press("Enter");
   }
 
