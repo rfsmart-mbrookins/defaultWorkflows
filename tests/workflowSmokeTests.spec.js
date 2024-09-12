@@ -382,8 +382,8 @@ test.describe("Default Workflow Tests", () => {
     });
   });
 
-   /* View Item Quantities */
-   test("View Item Quantities", async ({ page }) => {
+  /* View Item Quantities */
+  test("View Item Quantities", async ({ page }) => {
     const viewItemQuantitiesPage = new ViewItemQuantities(page);
     // Click on the View Item Quantities Link
     await test.step("Click View Item Quantities Link", async () => {
@@ -422,7 +422,6 @@ test.describe("Default Workflow Tests", () => {
       await viewItemQuantitiesPage.exitWorkflow();
     });
   });
-
 
   
 });
