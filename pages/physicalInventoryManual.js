@@ -1,18 +1,18 @@
 import { expect } from "@playwright/test";
 
-export class MiscellaneousTransactions {
+export class PhysicalInventoryManual {
   constructor(page) {
     this.page = page;
   }
 
-  miscellaneousTransactionsLink = () =>
-    this.page.locator('a:has-text("Miscellaneous Transactions")');
+  physicalInventoryManualLink = () =>
+    this.page.locator('a:has-text("Physical Inventory Manual")');
   textBox = () => this.page.locator("#txt");
   exitBtn = () => this.page.locator("#btnF3");
 
-  //Miscellaneous Transactions Link
-  async validateMiscellaneousTransactions() {
-    await this.miscellaneousTransactionsLink().click();
+  //Physical Inventory Link
+  async validatePhysicalInventoryManual() {
+    await this.physicalInventoryManualLink().click();
   }
 
   //Collect Org
@@ -21,27 +21,27 @@ export class MiscellaneousTransactions {
     await this.textBox().press("Enter");
   }
 
-  //Collect Account Source
-  async collectAccountSource() {
-    await this.textBox().fill("US");
+  //Collect Physical Inventory Name
+  async collectPhysicalInventoryName() {
+    await this.textBox().fill("CS1 Physical Inventory");
+    await this.textBox().press("Enter");
+  }
+
+  //Collect Subinventory
+  async collectSubinventory() {
+    await this.textBox().fill("CS1");
+    await this.textBox().press("Enter");
+  }
+
+  //Collect Locator
+  async collectLocator() {
+    await this.textBox().fill("A.1.1.1");
     await this.textBox().press("Enter");
   }
 
   //Collect Item Number
   async collectItemNumber() {
     await this.textBox().fill("CD-REG-ITEM-01");
-    await this.textBox().press("Enter");
-  }
-
-  //Collect Subinventory
-  async collectSubinventory() {
-    await this.textBox().fill("Stores");
-    await this.textBox().press("Enter");
-  }
-
-  //Collect Locator
-  async collectLocator() {
-    await this.textBox().fill("1.1.1.1");
     await this.textBox().press("Enter");
   }
 
@@ -57,6 +57,18 @@ export class MiscellaneousTransactions {
     await this.textBox().press("Enter");
   }
 
+  //Collect Number of Tags
+  async collectQtyTags() {
+    await this.textBox().fill("1");
+    await this.textBox().press("Enter");
+  }
+
+  //Collect Printer -
+  async collectPrinter() {
+    await this.textBox().fill("TestPrinter1");
+    await this.textBox().press("Enter");
+  }
+
   //Collect Quantity of Labels
   async collectQtyLabels() {
     await this.textBox().fill("1");
@@ -65,8 +77,13 @@ export class MiscellaneousTransactions {
 
   //Collect Printer -
   async collectPrinter() {
-    await this.textBox().fill("\\PRINT-SERVLexmark-room");
+    await this.textBox().fill("TestPrinter1");
     await this.textBox().press("Enter");
+  }
+
+  //Exit Workflow
+  async exitWorkflow() {
+    await this.exitBtn().click();
   }
 
   //Exit Workflow
