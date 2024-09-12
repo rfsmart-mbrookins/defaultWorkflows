@@ -7,6 +7,7 @@ import { ViewItemQuantities } from "../pages/viewItemQuantities";
 import { InspectReceipt02 } from "../pages/inspectReceipt02";
 import { MiscellaneousTransactions } from "../pages/miscellaneousTransactions";
 import { PhysicalInventoryManual } from "../pages/physicalInventoryManual";
+import { PhysicalInventory01 } from "../pages/physicalInventory01";
 
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);
@@ -83,47 +84,6 @@ test.describe("Default Workflow Tests", () => {
   //   });
   // });
 
-  /* Label Print 01 */
-  test("Label Print 01", async ({ page }) => {
-    const labelPrint01Page = new LabelPrint01(page);
-    // Click on the Label Print 01 Link
-    await test.step("Click Label Print 01 Link", async () => {
-      await labelPrint01Page.validateLabelPrint01Link();
-    });
-    //Enter Organization Code
-    await test.step("Enter Org Code", async () => {
-      await labelPrint01Page.collectOrg();
-    });
-    //Enter Subinventory
-    await test.step("Enter Subinventory", async () => {
-      await labelPrint01Page.collectSubinventory();
-    });
-    //Enter Locator
-    await test.step("Enter Locator", async () => {
-      await labelPrint01Page.collectLocator();
-    });
-    //Enter Item Number
-    await test.step("Enter Item Number", async () => {
-      await labelPrint01Page.collectItemNumber();
-    });
-    //Enter Quantity
-    await test.step("Enter Quantity", async () => {
-      await labelPrint01Page.collectQuantity();
-    });
-    //Enter Quantity of Labels
-    await test.step("Enter Quantity of Labels", async () => {
-      await labelPrint01Page.collectQtyLabels();
-    });
-    //Enter Printer
-    await test.step("Enter Printer", async () => {
-      await labelPrint01Page.collectPrinter();
-    });
-    //Exit Workflow
-    await test.step("Exit Workflow", async () => {
-      await labelPrint01Page.exitWorkflow();
-    });
-  });
-
   /* Create Movement Request */
   test("Create Movement Request", async ({ page }) => {
     const movementRequestPage = new MovementRequest(page);
@@ -177,44 +137,44 @@ test.describe("Default Workflow Tests", () => {
     });
   });
 
-  /* View Item Quantities */
-  test("View Item Quantities", async ({ page }) => {
-    const viewItemQuantitiesPage = new ViewItemQuantities(page);
-    // Click on the View Item Quantities Link
-    await test.step("Click View Item Quantities Link", async () => {
-      await viewItemQuantitiesPage.validateViewItemQuantitiesLink();
+  /* Label Print 01 */
+  test("Label Print 01", async ({ page }) => {
+    const labelPrint01Page = new LabelPrint01(page);
+    // Click on the Label Print 01 Link
+    await test.step("Click Label Print 01 Link", async () => {
+      await labelPrint01Page.validateLabelPrint01Link();
     });
     //Enter Organization Code
     await test.step("Enter Org Code", async () => {
-      await viewItemQuantitiesPage.collectOrg();
-    });
-    //Enter Item Number
-    await test.step("Enter Item Number", async () => {
-      await viewItemQuantitiesPage.collectItemNumber();
+      await labelPrint01Page.collectOrg();
     });
     //Enter Subinventory
     await test.step("Enter Subinventory", async () => {
-      await viewItemQuantitiesPage.collectSubinventory();
+      await labelPrint01Page.collectSubinventory();
     });
     //Enter Locator
     await test.step("Enter Locator", async () => {
-      await viewItemQuantitiesPage.collectLocator();
+      await labelPrint01Page.collectLocator();
     });
-    //Advance in Workflow
-    await test.step("Click Enter", async () => {
-      await viewItemQuantitiesPage.enterScreen();
+    //Enter Item Number
+    await test.step("Enter Item Number", async () => {
+      await labelPrint01Page.collectItemNumber();
+    });
+    //Enter Quantity
+    await test.step("Enter Quantity", async () => {
+      await labelPrint01Page.collectQuantity();
     });
     //Enter Quantity of Labels
     await test.step("Enter Quantity of Labels", async () => {
-      await viewItemQuantitiesPage.collectQtyLabels();
+      await labelPrint01Page.collectQtyLabels();
     });
-    //Enter Quantity on Labels
-    await test.step("Enter Quantity on Labels", async () => {
-      await viewItemQuantitiesPage.collectQtyOnLabels();
+    //Enter Printer
+    await test.step("Enter Printer", async () => {
+      await labelPrint01Page.collectPrinter();
     });
     //Exit Workflow
     await test.step("Exit Workflow", async () => {
-      await viewItemQuantitiesPage.exitWorkflow();
+      await labelPrint01Page.exitWorkflow();
     });
   });
 
@@ -304,6 +264,7 @@ test.describe("Default Workflow Tests", () => {
     });
   });
 
+  /* Physical Inventory Manaual */
   test("Physical Inventory Manual", async ({ page }) => {
     const physicalInventoryManualPage = new PhysicalInventoryManual(page);
     // Click on the Physical Inventory Manaul Link
@@ -339,7 +300,7 @@ test.describe("Default Workflow Tests", () => {
       await physicalInventoryManualPage.collectUom();
     });
     //Enter Quantity of Tags
-    await test.step("Enter Quantity of Labels", async () => {
+    await test.step("Enter Quantity of Tags", async () => {
       await physicalInventoryManualPage.collectQtyTags();
     });
     //Enter Printer
@@ -359,6 +320,109 @@ test.describe("Default Workflow Tests", () => {
       await physicalInventoryManualPage.exitWorkflow();
     });
   });
+
+  /* Physical Inventory 01 */
+  test("Physical Inventory 01", async ({ page }) => {
+    const physicalInventory01Page = new PhysicalInventory01(page);
+    // Click on the Physical Inventory 01 Link
+    await test.step("Click Physical Inventory Manaul Link", async () => {
+      await physicalInventory01Page.validatePhysicalInventory01();
+    });
+    //Enter Organization Code
+    await test.step("Enter Org Code", async () => {
+      await physicalInventory01Page.collectOrg();
+    });
+    //Enter Physical Inventory Name
+    await test.step("Enter Physical Inventory Name", async () => {
+      await physicalInventory01Page.collectPhysicalInventoryName();
+    });
+    //Enter Tag Number
+    await test.step("Enter Tag Number", async () => {
+      await physicalInventory01Page.collectTagNumber();
+    });
+    //Enter Subinventory
+    await test.step("Enter Subinventory", async () => {
+      await physicalInventory01Page.collectSubinventory();
+    });
+    //Enter Locator
+    await test.step("Enter Locator", async () => {
+      await physicalInventory01Page.collectLocator();
+    });
+    //Enter Item Number
+    await test.step("Enter Item Number", async () => {
+      await physicalInventory01Page.collectItemNumber();
+    });
+    //Enter Quantity
+    await test.step("Enter Quantity", async () => {
+      await physicalInventory01Page.collectQuantity();
+    });
+    //Enter Unit of Measure
+    await test.step("Enter UOM", async () => {
+      await physicalInventory01Page.collectUom();
+    });
+    //Enter Quantity of Tags
+    await test.step("Enter Quantity of Tags", async () => {
+      await physicalInventory01Page.collectQtyTags();
+    });
+    //Enter Printer
+    await test.step("Enter Printer", async () => {
+      await physicalInventory01Page.collectPrinter();
+    });
+    //Enter Quantity of Labels
+    await test.step("Enter Quantity of Labels", async () => {
+      await physicalInventory01Page.collectQtyLabels();
+    });
+    //Enter Printer
+    await test.step("Enter Printer", async () => {
+      await physicalInventory01Page.collectPrinter();
+    });
+    //Exit Workflow
+    await test.step("Exit Workflow", async () => {
+      await physicalInventory01Page.exitWorkflow();
+    });
+  });
+
+   /* View Item Quantities */
+   test("View Item Quantities", async ({ page }) => {
+    const viewItemQuantitiesPage = new ViewItemQuantities(page);
+    // Click on the View Item Quantities Link
+    await test.step("Click View Item Quantities Link", async () => {
+      await viewItemQuantitiesPage.validateViewItemQuantitiesLink();
+    });
+    //Enter Organization Code
+    await test.step("Enter Org Code", async () => {
+      await viewItemQuantitiesPage.collectOrg();
+    });
+    //Enter Item Number
+    await test.step("Enter Item Number", async () => {
+      await viewItemQuantitiesPage.collectItemNumber();
+    });
+    //Enter Subinventory
+    await test.step("Enter Subinventory", async () => {
+      await viewItemQuantitiesPage.collectSubinventory();
+    });
+    //Enter Locator
+    await test.step("Enter Locator", async () => {
+      await viewItemQuantitiesPage.collectLocator();
+    });
+    //Advance in Workflow
+    await test.step("Click Enter", async () => {
+      await viewItemQuantitiesPage.enterScreen();
+    });
+    //Enter Quantity of Labels
+    await test.step("Enter Quantity of Labels", async () => {
+      await viewItemQuantitiesPage.collectQtyLabels();
+    });
+    //Enter Quantity on Labels
+    await test.step("Enter Quantity on Labels", async () => {
+      await viewItemQuantitiesPage.collectQtyOnLabels();
+    });
+    //Exit Workflow
+    await test.step("Exit Workflow", async () => {
+      await viewItemQuantitiesPage.exitWorkflow();
+    });
+  });
+
 
   
 });
