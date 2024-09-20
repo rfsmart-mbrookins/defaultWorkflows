@@ -417,11 +417,13 @@ test.describe("Default Workflow Tests", () => {
     await test.step("Enter Quantity on Labels", async () => {
       await viewItemQuantitiesPage.collectQtyOnLabels();
     });
+    //Enter Printer
+    await test.step("Enter Printer", async () => {
+      await viewItemQuantitiesPage.collectPrinter();
+    });
     //Exit Workflow
     await test.step("Exit Workflow", async () => {
       await viewItemQuantitiesPage.exitWorkflow();
     });
   });
-
-  
 });

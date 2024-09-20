@@ -52,7 +52,7 @@ export class LabelPrint01 {
 
   //Collect Printer -
   async collectPrinter() {
-    await this.textBox().fill("\\PRINT-SERVLexmark-room");
+    await this.textBox().fill("TestPrinter1");
     await this.textBox().press("Enter");
   }
 
